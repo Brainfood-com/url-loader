@@ -36,7 +36,7 @@ export default function loader(src) {
       src = Buffer.from(src);
     }
 
-    return `module.exports = ${JSON.stringify(
+    return `export default ${JSON.stringify(
       `data:${mimetype || ''};base64,${src.toString('base64')}`
     )}`;
   }
