@@ -8,7 +8,7 @@
   "homepage": "https://github.com/webpack-contrib/url-loader",
   "bugs": "https://github.com/webpack-contrib/url-loader/issues",
   "main": "dist/cjs.js",
-  "module": "src/index.js",
+  "module": "./src/index.js",
   "engines": {
     "node": ">= 6.9.0"
   },
@@ -32,7 +32,7 @@
     "ci:lint:commits": "commitlint --from=origin/master --to=${CIRCLE_SHA1}",
     "defaults": "webpack-defaults"
   },
-  "files": [
+  "files2": [
     "dist",
     "src"
   ],
