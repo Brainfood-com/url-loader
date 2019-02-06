@@ -8,13 +8,15 @@
   "homepage": "https://github.com/webpack-contrib/url-loader",
   "bugs": "https://github.com/webpack-contrib/url-loader/issues",
   "main": "dist/cjs.js",
-  "module": "./src/index.js",
+  "module": "./src",
   "engines": {
     "node": ">= 6.9.0"
   },
   "scripts": {
+    "prepare": "npm run build:babel",
     "start": "npm run build -- -w",
-    "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+    "build:babel": "babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+    "build": "cross-env NODE_ENV=production npm run build:babel",
     "clean": "del-cli dist",
     "commitlint": "commitlint",
     "commitmsg": "commitlint -e $GIT_PARAMS",
@@ -40,6 +42,7 @@
     "webpack": "^4.0.0"
   },
   "dependencies": {
+    "esm": "^3.2.1",
     "loader-utils": "^1.1.0",
     "mime": "^2.0.3",
     "schema-utils": "^1.0.0"
